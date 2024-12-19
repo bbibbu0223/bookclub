@@ -1,0 +1,101 @@
+.modal_wrap {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 63, 63, 0.575);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    animation: fadeInBackground 0.3s ease-out; 
+    
+    .close_btn {
+        &::before{
+            content: '\f00d';
+            display: block;
+            font-size: 20px;
+            color: var(--b2);
+            font-family: "FAS";
+            position: absolute;
+            right: 68px;
+            top: 36px;
+            cursor: pointer;
+        }
+    }
+    
+    .modal_item {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        justify-content: center;
+        z-index: 5;
+        padding: 20px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+
+        background: url(/common/img/modalBack.png)no-repeat;
+        z-index: 1000;
+
+        transform: scale(0.5); 
+        opacity: 0; 
+        animation: popUpAnimation 0.3s ease-out forwards; 
+    }
+    
+    .modal_text {
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+
+        h3 {
+            font-size: 24px;
+            color: var(--b2);
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .modal_project {
+        margin-top: 50px;
+        position: relative;
+
+        img{
+            height: 80vh;
+            position: absolute;
+            left: 80%;
+            top: -300%;
+            z-index: -1;
+        }
+
+        .modal_content {
+            margin-top: 50px;
+            width: 100%;
+            text-align: justify;
+            line-height: 1.5rem;
+            font-size: 18px;
+            background-color: #a874472a;
+        }
+    }
+}
+
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popUpAnimation {
+    0% {
+        transform: scale(0.5); 
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: scale(1); 
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}

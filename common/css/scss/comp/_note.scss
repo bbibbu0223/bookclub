@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=EB+Garamond&family=Noto+Sans+KR:wght@100..900&family=Raleway:wght@300&display=swap');
+
+.mapList{
+    color: var(--b1);
+    width: 30px;
+    height: 28px;
+    font-size: 16px;
+    padding: 12px;
+    position: absolute;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--b2);
+    height: 100vh;
+    font-family: 'Noto Sans KR';
+}
+
+/* 노트 리스트 (책장처럼) */
+
+.note-list {
+    width: 100%;
+    background: var(--m1);
+
+    /* 책장 배경색: 나무 느낌 */
+    padding: 20px;
+    max-height: 850px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    font-size: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--b2);
+
+    margin-bottom: 20px;
+}
+
+
+.note-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--b2);
+
+    margin: 10px 0;
+    padding: 15px;
+    max-height: 850px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+
+        /* 마우스 호버 시 살짝 떠오름 */
+    }
+
+    img {
+        width: 80px;
+        height: 120px;
+        object-fit: cover;
+        margin-right: 15px;
+    }
+
+    h3 {
+        margin: 0 0 5px 0;
+        font-size: 1.2em;
+        color: #4d372d;
+    }
+
+    p {
+        margin: 5px 0;
+        color: #6c584c;
+        font-size: 0.9em;
+    }
+}
+
+/* 도서 표지 스타일 */
+
+/* 노트 텍스트 스타일 */
+
+/* form 스타일 */
+
+.container {
+    width: auto;
+    font-size: 20px;
+    background-color: var(--b2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--m1);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: unset;
+}
+
+button.btn {
+    background-color: var(--b1);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--m2);
+        color: black;
+        transition: .3s;
+    }
+}
+
+/* 이미지 미리보기 */
+
+.image-preview {
+    display: none;
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* 삭제 버튼 스타일 */
+
+.delete-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #e85050;
+    }
+}
+
+.noteBox {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book부대공 Wish World</title>
+
+    <script src="/common/js/include.js"></script>
+</head>
+
+<body>
+    <div class="mapList">
+        <a href="/main.html">map</a>
+    </div>
+
+    <div class="flex">
+        <div class="container">
+            <form id="noteForm">
+                <!-- 도서 표지 -->
+                <div class="form-group">
+                    <label for="cover">책 표지</label>
+                    <input type="file" id="cover" accept="image/*" onchange="previewImage(event)">
+                    <img id="image-preview" class="image-preview" alt="도서 표지 미리보기">
+                </div>
+
+                <!-- 책 제목 -->
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" id="title" placeholder="책 제목을 입력하세요" required>
+                </div>
+
+                <!-- 저자 -->
+                <div class="form-group">
+                    <label for="author">저자</label>
+                    <input type="text" id="author" placeholder="저자를 입력하세요" required>
+                </div>
+
+                <!-- 읽은 날짜 -->
+                <div class="form-group">
+                    <label for="date">모임 날짜</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <!-- 독후감 -->
+                <div class="form-group">
+                    <label for="review">한줄 감상문</label>
+                    <textarea id="review" placeholder="독후감을 작성하세요" required></textarea>
+                </div>
+
+                <!-- 저장 버튼 -->
+                <button type="submit" class="btn">저장</button>
+            </form>
+        </div>
+
+        <div class="note-list" id="noteList">
+            <h2>book list</h2>
+            <!-- 저장된 노트들이 여기에 표시됩니다 -->
+        </div>
+
+    </div>
+
+    <script>
+        // 이미지 미리보기
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const preview = document.getElementById('image-preview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // 독서 노트 저장 및 표시
+        document.getElementById('noteForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // 폼 기본 동작 막기
+
+            // 입력 데이터 가져오기
+            const cover = document.getElementById('image-preview').src || '';
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const date = document.getElementById('date').value;
+            const review = document.getElementById('review').value;
+
+            // 데이터 유효성 확인
+            if (!title || !author || !date || !review) {
+                alert('모든 필드를 입력해주세요.');
+                return;
+            }
+
+            // 독서 노트 객체 생성
+            const note = {
+                cover,
+                title,
+                author,
+                date,
+                review
+            };
+
+            // Local Storage에 저장
+            const notes = JSON.parse(localStorage.getItem('notes')) || [];
+            notes.push(note);
+            localStorage.setItem('notes', JSON.stringify(notes));
+
+            // 폼 초기화
+            this.reset();
+            document.getElementById('image-preview').style.display = 'none';
+
+            // 리스트 업데이트
+            displayNotes();
+        });
+
+
+        // 페이지 로드 시 저장된 노트 표시
+        window.onload = displayNotes;
+
+        // 도서 삭제 기능
+        function deleteNote(index) {
+            const notes = JSON.parse(localStorage.getItem('notes')) || [];
+            notes.splice(index, 1); // 해당 인덱스의 노트를 삭제
+            localStorage.setItem('notes', JSON.stringify(notes)); // Local Storage 업데이트
+            displayNotes(); // 화면 갱신
+        }
+
+        // 저장된 노트 표시
+        function displayNotes() {
+            const notes = JSON.parse(localStorage.getItem('notes')) || [];
+            const noteList = document.getElementById('noteList');
+            noteList.innerHTML = '<h2>book list</h2>';
+
+            notes.forEach((note, index) => {
+                const noteItem = document.createElement('div');
+                noteItem.classList.add('note-item');
+                noteItem.innerHTML = `
+        <div class="noteBox"><img src="${note.cover}" alt="도서 표지">
+            <div class="note-details">
+                <h3>${note.title}</h3>
+                <p><strong>저자:</strong> ${note.author}</p>
+                <p><strong>모임 날짜:</strong> ${note.date}</p>
+                <p><strong>한줄 감상문:</strong> ${note.review}</p>
+            </div></div>
+            
+            <button class="delete-btn" onclick="deleteNote(${index})"><i class="fa-solid fa-xmark"></i></button>
+        `;
+                noteList.appendChild(noteItem);
+            });
+        }
+    </script>
+</body>
+
+</html>

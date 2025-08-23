@@ -1,13 +1,13 @@
 //font
 @font-face{
     font-family: heiro;
-    src: url("./common/font/HeirofLightRegular.ttf");
+    src: url("../../../common/font/HeirofLightRegular.ttf");
 }
 @font-face {
     font-family: "FAS";
     font-weight: 300;
-    src: url("./common/plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.woff2") format("woff2"),
-        url("./common/plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.ttf") format("truetype");
+    src: url("../../../common/plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("../../../common/plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.ttf") format("truetype");
 }
 
 //color

@@ -153,12 +153,12 @@ b {
 
 @font-face {
   font-family: heiro;
-  src: url("/common/font/HeirofLightRegular.ttf");
+  src: url("./common/font/HeirofLightRegular.ttf");
 }
 @font-face {
   font-family: "FAS";
   font-weight: 300;
-  src: url("/common/plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.woff2") format("woff2"), url("/common/plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.ttf") format("truetype");
+  src: url("./common/plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.woff2") format("woff2"), url("./common/plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.ttf") format("truetype");
 }
 :root {
   --m1:#0d1330;
@@ -256,7 +256,7 @@ body {
 }
 .wrapper .content .section.hero,
 .content .content .section.hero {
-  background-image: url(/common/img/ryan-hutton-Jztmx9yqjBw-unsplash.jpg);
+  background-image: url("./common/img/ryan-hutton-Jztmx9yqjBw-unsplash.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -309,14 +309,14 @@ body {
 }
 
 .background {
-  background-image: url(/common/img/book부대공_바탕.png);
+  background-image: url("./common/img/book부대공_바탕.png");
   width: 100%;
   height: 100vh;
   position: relative;
   overflow-y: hidden;
 }
 .background .map {
-  background: url(/common/img/KakaoTalk_20241217_221406545.png) no-repeat center;
+  background: url("./common/img/KakaoTalk_20241217_221406545.png") no-repeat center;
   width: 100%;
   height: 100%;
 }
@@ -385,7 +385,7 @@ body {
 
 @media screen and (max-width: 1366px) {
   .background .map {
-    background: url(/common/img/1366지도.png) no-repeat center !important;
+    background: url("./common/img/1366지도.png") no-repeat center !important;
   }
   .background .img_no1 img,
   .background .img_no2 img,
@@ -672,7 +672,7 @@ button.btn:hover {
   position: fixed;
   top: 50%;
   left: 50%;
-  background: url(/common/img/modalBack.png) no-repeat;
+  background: url("./common/img/modalBack.png") no-repeat;
   z-index: 1000;
   transform: scale(0.5);
   opacity: 0;
@@ -736,7 +736,7 @@ button.btn:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(/common/img/ryan-hutton-Jztmx9yqjBw-unsplash.jpg);
+  background: url("./common/img/ryan-hutton-Jztmx9yqjBw-unsplash.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
@@ -767,7 +767,7 @@ button.btn:hover {
   top: 25%;
   width: 50%;
   height: 100%;
-  background-image: url("/common/img/cloud.png");
+  background-image: url("./common/img/cloud.png");
   background-size: 100%;
   background-repeat: no-repeat;
   z-index: 900;

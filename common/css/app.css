@@ -153,12 +153,12 @@ b {
 
 @font-face {
   font-family: heiro;
-  src: url("../../../font/HeirofLightRegular.ttf");
+  src: url("../../font/HeirofLightRegular.ttf");
 }
 @font-face {
   font-family: "FAS";
   font-weight: 300;
-  src: url("../../../plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.woff2") format("woff2"), url("../../../plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.ttf") format("truetype");
+  src: url("../../plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.woff2") format("woff2"), url("../../plugins/fontawesome-free-6.1.2-web/webfonts/fa-solid-900.ttf") format("truetype");
 }
 :root {
   --m1:#0d1330;
@@ -256,7 +256,7 @@ body {
 }
 .wrapper .content .section.hero,
 .content .content .section.hero {
-  background-image: url("../img/ryan-hutton-Jztmx9yqjBw-unsplash.jpg");
+  background-image: url("../../../img/ryan-hutton-Jztmx9yqjBw-unsplash.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

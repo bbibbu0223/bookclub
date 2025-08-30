@@ -256,7 +256,7 @@ body {
 }
 .wrapper .content .section.hero,
 .content .content .section.hero {
-  background-image: url("../../../img/ryan-hutton-Jztmx9yqjBw-unsplash.jpg");
+  background-image: url("/common/img/ryan-hutton-Jztmx9yqjBw-unsplash.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
